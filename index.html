@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>inner HTML and input value</title>
+
+
+        <script src="./js/script.js"></script>
+        <script>
+            // i can write the js code before the clossing of head tag
+        </script>
+    </head>
+    <body>
+        <div data-v="1"></div>
+        <p class="myparagraph"></p>
+        <hr>
+        <form>
+            <label for="fullname">Fullname</label>
+            <input type="text" id="fullname">
+
+            <label for="gender">Gender</label>
+            <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <button value="submit" onclick="submitData()">Submit</button>
+        </form>
+        <button onclick="frontend()">click me!</button>
+        <script>
+            // i can write the js code before the clossing of body tag
+            //object.method();
+            var docs = document.querySelector('div[data-v="1"]');
+            var docs2 = document.querySelector('p.myparagraph');
+            let full_name = document.querySelector('input#fullname')
+            console.log(docs.innerHTML)
+
+            console.log(docs2)
+            docs2.innerHTML = 'Hellooo,' +docs.innerHTML
+            
+            //1 function definition
+            function frontend() {
+                full_name.value = "Hellooo india"+docs.innerHTML;
+                console.log("hello frontends developer students")
+            }
+            //1 function definition
+            let d1 = document.querySelector('input#fullname');
+            let d2 = document.querySelector('select#gender');
+            function submitData(){
+                console.log(d1.value);
+                console.log(d2.value)
+            }
+        </script>
+    </body>
+</html>
